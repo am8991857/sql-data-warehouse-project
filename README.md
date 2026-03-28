@@ -69,15 +69,6 @@ Gold follows a simple star schema:
 -   [GOLD LAYER.sql](GOLD%20LAYER.sql): alternative Gold view script and preview query.
 -   [datasets](datasets): raw CSV files grouped by source system.
 
-## Example Queries / Features
-
-sql
-
-Copy
-
-```sql
--- Top 10 sales rows with customer and product infoSELECT TOP (10)    f.order_number,    f.order_date,    d.customer_name,    p.product_name,    f.quantity,    f.sales_amountFROM gold.sales_fact AS fLEFT JOIN gold.dim_customer AS d    ON f.customer_number = d.customer_idLEFT JOIN gold.dim_product AS p    ON f.product_number = p.product_numberORDER BY f.order_date DESC;
-```
 
 ## How to Run the Project
 
